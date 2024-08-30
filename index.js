@@ -3,7 +3,7 @@ import cors from 'cors'
 import { userRouter } from './route/userRouter.js'
 import { productsRouter } from './route/productsRouter.js'
 
-let port = process.env.PORT || 2020
+let port = process.env.PORT || 4004
 const app = express()
 
 app.use(cors())
