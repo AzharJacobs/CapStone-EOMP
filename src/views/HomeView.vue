@@ -16,7 +16,7 @@
           </div>
           <div class="col-lg-7">
             <div class="hero-img-wrap">
-              <img src="images/couch.png" class="img-fluid" alt="Hero Image">
+              <img src="https://azharjacobs.github.io/AzharImages/Capstone/couch.png" alt="">
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
           <!-- Start Column 2 -->
           <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
             <a class="product-item" href="cart.html">
-              <img src="images/product-1.png" class="img-fluid product-thumbnail" alt="Nordic Chair">
+              <img src="https://azharjacobs.github.io/AzharImages/Capstone/product-1.png" class="img-fluid product-thumbnail" alt="Nordic Chair">
               <h3 class="product-title">Nordic Chair</h3>
               <strong class="product-price">$50.00</strong>
               <span class="icon-cross">
@@ -53,7 +53,7 @@
           <!-- Start Column 3 -->
           <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
             <a class="product-item" href="cart.html">
-              <img src="images/product-2.png" class="img-fluid product-thumbnail" alt="Kruzo Aero Chair">
+              <img src="https://azharjacobs.github.io/AzharImages/Capstone/product-2.png" class="img-fluid product-thumbnail" alt="Kruzo Aero Chair">
               <h3 class="product-title">Kruzo Aero Chair</h3>
               <strong class="product-price">$78.00</strong>
               <span class="icon-cross">
@@ -66,7 +66,7 @@
           <!-- Start Column 4 -->
           <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
             <a class="product-item" href="cart.html">
-              <img src="images/product-3.png" class="img-fluid product-thumbnail" alt="Ergonomic Chair">
+              <img src="https://azharjacobs.github.io/AzharImages/Capstone/product-3.png" class="img-fluid product-thumbnail" alt="Ergonomic Chair">
               <h3 class="product-title">Ergonomic Chair</h3>
               <strong class="product-price">$43.00</strong>
               <span class="icon-cross">
@@ -129,7 +129,7 @@
           </div>
           <div class="col-lg-5">
             <div class="img-wrap">
-              <img src="images/why-choose-us-img.jpg" alt="Why Choose Us" class="img-fluid">
+              <img src="https://azharjacobs.github.io/AzharImages/Capstone/why-choose-us-img.jpg" alt="Why Choose Us" class="img-fluid">
             </div>
           </div>
         </div>
@@ -143,9 +143,9 @@
         <div class="row justify-content-between">
           <div class="col-lg-7 mb-5 mb-lg-0">
             <div class="imgs-grid">
-              <div class="grid grid-1"><img src="images/img-grid-1.jpg" alt="Image Grid 1" class="img-fluid"></div>
-              <div class="grid grid-2"><img src="images/img-grid-2.jpg" alt="Image Grid 2" class="img-fluid"></div>
-              <div class="grid grid-3"><img src="images/img-grid-3.jpg" alt="Image Grid 3" class="img-fluid"></div>
+              <div class="grid grid-1"><img src="https://azharjacobs.github.io/AzharImages/Capstone/img-grid-1.jpg" alt="Image Grid 1" class="img-fluid"></div>
+              <div class="grid grid-2"><img src="https://azharjacobs.github.io/AzharImages/Capstone/img-grid-2.jpg" alt="Image Grid 2" class="img-fluid"></div>
+              <div class="grid grid-3"><img src="https://azharjacobs.github.io/AzharImages/Capstone/img-grid-3.jpg" alt="Image Grid 3" class="img-fluid"></div>
             </div>
           </div>
           <div class="col-lg-5 ps-lg-5">
