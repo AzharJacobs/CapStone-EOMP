@@ -81,61 +81,38 @@
     </div>
     <!-- End Product Section -->
 
-    <!-- Start Why Choose Us Section -->
-    <div class="why-choose-section">
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-6">
-            <h2 class="section-title">Why Choose Us</h2>
-            <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-            <div class="row my-5">
-              <div class="col-6 col-md-6">
-                <div class="feature">
-                  <div class="icon">
-                    <img src="images/truck.svg" alt="Fast & Free Shipping" class="img-fluid">
-                  </div>
-                  <h3>Fast &amp; Free Shipping</h3>
-                  <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
-                </div>
-              </div>
-              <div class="col-6 col-md-6">
-                <div class="feature">
-                  <div class="icon">
-                    <img src="images/bag.svg" alt="Easy to Shop" class="img-fluid">
-                  </div>
-                  <h3>Easy to Shop</h3>
-                  <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
-                </div>
-              </div>
-              <div class="col-6 col-md-6">
-                <div class="feature">
-                  <div class="icon">
-                    <img src="images/support.svg" alt="24/7 Support" class="img-fluid">
-                  </div>
-                  <h3>24/7 Support</h3>
-                  <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
-                </div>
-              </div>
-              <div class="col-6 col-md-6">
-                <div class="feature">
-                  <div class="icon">
-                    <img src="images/return.svg" alt="Hassle Free Returns" class="img-fluid">
-                  </div>
-                  <h3>Hassle Free Returns</h3>
-                  <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
-                </div>
-              </div>
+<!-- Start Awesome Shop Section -->
+<div class="awesome-shop-section">
+  <div class="container">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-lg-6">
+        <div class="offer-img-wrap">
+          <img src="https://azharjacobs.github.io/AzharImages/Capstone/offer_img.png" alt="Offer Image" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="offer-text">
+          <h2 class="section-title mb-4">Weekly Sale on 60% Off All Products</h2>
+          <div class="date-countdown">
+            <div id="timer">
+              <div id="days" class="date"></div>
+              <div id="hours" class="date"></div>
+              <div id="minutes" class="date"></div>
+              <div id="seconds" class="date"></div>
             </div>
           </div>
-          <div class="col-lg-5">
-            <div class="img-wrap">
-              <img src="https://azharjacobs.github.io/AzharImages/Capstone/why-choose-us-img.jpg" alt="Why Choose Us" class="img-fluid">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter Email Address" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <a href="#" class="input-group-text btn" id="basic-addon2">Book Now</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- End Why Choose Us Section -->
+  </div>
+</div>
+<!-- End Awesome Shop Section -->
 
     <!-- Start We Help Section -->
     <div class="we-help-section">
@@ -171,7 +148,7 @@
           <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="product-item-sm d-flex">
               <div class="thumbnail">
-                <img src="images/product-1.png" alt="Nordic Chair" class="img-fluid">
+                <img src="https://azharjacobs.github.io/AzharImages/Capstone/product-1.png" alt="Nordic Chair" class="img-fluid">
               </div>
               <div class="pt-3">
                 <h3>Nordic Chair</h3>
@@ -183,7 +160,7 @@
           <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="product-item-sm d-flex">
               <div class="thumbnail">
-                <img src="images/product-2.png" alt="Kruzo Aero Chair" class="img-fluid">
+                <img src="https://azharjacobs.github.io/AzharImages/Capstone/product-.png" alt="Kruzo Aero Chair" class="img-fluid">
               </div>
               <div class="pt-3">
                 <h3>Kruzo Aero Chair</h3>
@@ -195,7 +172,7 @@
           <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="product-item-sm d-flex">
               <div class="thumbnail">
-                <img src="images/product-3.png" alt="Ergonomic Chair" class="img-fluid">
+                <img src="https://azharjacobs.github.io/AzharImages/Capstone/product-3.png" alt="Ergonomic Chair" class="img-fluid">
               </div>
               <div class="pt-3">
                 <h3>Ergonomic Chair</h3>
