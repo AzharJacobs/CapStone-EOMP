@@ -7,7 +7,7 @@
           <div class="col-lg-5">
             <div class="intro-excerpt">
               <h1>Modern Interior <span class="d-block">Design Studio</span></h1>
-              <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
+              <p class="mb-4">Each piece is carefully designed to offer both functionality and aesthetic appeal. From modern minimalism to timeless classics, we ensure that every item seamlessly complements your living space while standing the test of time</p>
               <p>
                 <a href="#" class="btn btn-secondary me-2">Shop Now</a>
                 <a href="#" class="btn btn-white-outline">Explore</a>
@@ -29,13 +29,14 @@
       <div class="container">
         <div class="row">
 
-          <!-- Start Column 1 -->
-          <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-            <h2 class="mb-4 section-title">Crafted with excellent material.</h2>
-            <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-            <p><a href="shop.html" class="btn">Explore</a></p>
-          </div>
-          <!-- End Column 1 -->
+<!-- Start Column 1 -->
+<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+  <h2 class="mb-4 section-title">Crafted with Excellence</h2>
+  <p class="mb-4">Our furniture is made from the finest materials to ensure durability and timeless beauty. Whether it's hardwood, metal, or fabric, each piece is crafted to deliver unmatched comfort and style to your home.</p>
+  <p><a href="shop.html" class="btn">Explore Our Collection</a></p>
+</div>
+<!-- End Column 1 -->
+
 
           <!-- Start Column 2 -->
           <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
@@ -84,12 +85,7 @@
 <!-- Start Awesome Shop Section -->
 <div class="awesome-shop-section">
   <div class="container">
-    <div class="row justify-content-between align-items-center">
-      <div class="col-lg-6">
-        <div class="offer-img-wrap">
-          <img src="https://azharjacobs.github.io/AzharImages/Capstone/offer_img.png" alt="Offer Image" class="img-fluid">
-        </div>
-      </div>
+    <div class="row justify-content-center align-items-center">
       <div class="col-lg-6">
         <div class="offer-text">
           <h2 class="section-title mb-4">Weekly Sale on 60% Off All Products</h2>
@@ -109,37 +105,49 @@
           </div>
         </div>
       </div>
+      <div class="col-lg-6">
+        <div class="offer-img-wrap">
+          <img src="https://azharjacobs.github.io/AzharImages/Capstone/offer_img.png" alt="Offer Image" class="img-fluid">
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <!-- End Awesome Shop Section -->
 
-    <!-- Start We Help Section -->
-    <div class="we-help-section">
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-7 mb-5 mb-lg-0">
-            <div class="imgs-grid">
-              <div class="grid grid-1"><img src="https://azharjacobs.github.io/AzharImages/Capstone/img-grid-1.jpg" alt="Image Grid 1" class="img-fluid"></div>
-              <div class="grid grid-2"><img src="https://azharjacobs.github.io/AzharImages/Capstone/img-grid-2.jpg" alt="Image Grid 2" class="img-fluid"></div>
-              <div class="grid grid-3"><img src="https://azharjacobs.github.io/AzharImages/Capstone/img-grid-3.jpg" alt="Image Grid 3" class="img-fluid"></div>
-            </div>
+<!-- Start We Help Section -->
+<div class="we-help-section">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-lg-7 mb-5 mb-lg-0">
+        <div class="imgs-grid">
+          <div class="grid grid-1">
+            <img src="https://azharjacobs.github.io/AzharImages/Capstone/img-grid-1.jpg" alt="Image Grid 1" class="img-fluid">
           </div>
-          <div class="col-lg-5 ps-lg-5">
-            <h2 class="section-title mb-4">We Help You Make Modern Interior Design</h2>
-            <p>Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-            <ul class="list-unstyled custom-list my-4">
-              <li>Donec vitae odio quis nisl dapibus malesuada</li>
-              <li>Donec vitae odio quis nisl dapibus malesuada</li>
-              <li>Donec vitae odio quis nisl dapibus malesuada</li>
-              <li>Donec vitae odio quis nisl dapibus malesuada</li>
-            </ul>
-            <p><a href="#" class="btn">Explore</a></p>
+          <div class="grid grid-2">
+            <img src="https://azharjacobs.github.io/AzharImages/Capstone/img-grid-2.jpg" alt="Image Grid 2" class="img-fluid">
+          </div>
+          <div class="grid grid-3">
+            <img src="https://azharjacobs.github.io/AzharImages/Capstone/img-grid-3.jpg" alt="Image Grid 3" class="img-fluid">
           </div>
         </div>
       </div>
+      <div class="col-lg-5 ps-lg-5">
+        <h2 class="section-title mb-4">We Help You Create Your Dream Interior</h2>
+        <p>At [Your Furniture Store], we specialize in crafting modern, stylish furniture that turns your house into a home. Our designs blend functionality with elegance to transform your living space. From sleek sofas to elegant dining sets, we provide everything you need to create a stunning interior.</p>
+        <ul class="list-unstyled custom-list my-4">
+          <li>Premium quality materials for durability and comfort</li>
+          <li>Wide variety of styles to suit any home</li>
+          <li>Expert advice to help you make the best choices</li>
+          <li>Customizable pieces to fit your unique space</li>
+        </ul>
+        <p><a href="#" class="btn">Explore Our Collection</a></p>
+      </div>
     </div>
-    <!-- End We Help Section -->
+  </div>
+</div>
+<!-- End We Help Section -->
+
 
     <!-- Start Popular Product -->
     <div class="popular-product">
