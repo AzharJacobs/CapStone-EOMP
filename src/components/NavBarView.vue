@@ -22,15 +22,14 @@
           </li>
           <li><router-link class="nav-link" to="/shop">Shop</router-link></li>
           <li><router-link class="nav-link" to="/about">About us</router-link></li>
-          <li><router-link class="nav-link" to="/services">Services</router-link></li>
-          <li><router-link class="nav-link" to="/blog">Blog</router-link></li>
+          <li><router-link class="nav-link" to="/checkout">CheckOut</router-link></li>
           <li><router-link class="nav-link" to="/contact">Contact us</router-link></li>
         </ul>
         
         <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-          <li><router-link class="nav-link" to="/user"><img src="images/user.svg" alt="User"></router-link></li>
-          <li><router-link class="nav-link" to="/cart"><img src="images/cart.svg" alt="Cart"></router-link></li>
-        </ul>
+  <li><router-link class="nav-link" to="/user"><i class="bi bi-person"></i></router-link></li>
+  <li><a class="nav-link" href="/src/components/CartComp.vue" @click="toggleCart"><i class="bi bi-cart"></i></a></li>
+</ul>
       </div>
     </div>
   </nav>
@@ -39,7 +38,20 @@
 
 <script>
 export default {
-  name: 'NavbarView'
+  name: 'NavbarView',
+  data() {
+    return {
+      sidenavOpen: false
+    };
+  },
+  methods: {
+    toggleCart() {
+      this.sidenavOpen = !this.sidenavOpen;
+    },
+    closeNav() {
+      this.sidenavOpen = false;
+    }
+  }
 }
 </script>
 
