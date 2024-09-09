@@ -9,6 +9,7 @@ export default createStore({
     user: null,
     products: null,
     product: "",
+    cart: [],
   },
   getters: {},
   mutations: {
@@ -24,8 +25,14 @@ export default createStore({
     setProduct(state, value) {
       state.product = value;
     },
+    updateCart(state, payload) {
+      state.cart.push(payload);
+    }
   },
   actions: {
+    addToCart(context, payload) {
+      context.commit('updateCart', payload);
+    },
     async register(context, payload) {
       try {
         let msg = (await axios.post(`${dbURL}users/`, payload)).data;

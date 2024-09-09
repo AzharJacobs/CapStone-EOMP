@@ -32,9 +32,9 @@
               <img :src="product.image" class="img-fluid product-thumbnail" @error="handleImageError" />
               <h3 class="product-title">{{ product.title }}</h3>
               <strong class="product-price">{{ product.price }}</strong>
-              <span class="icon-cross">
-                <img src="images/cross.svg" class="img-fluid" />
-              </span>
+              <span class="icon-cross" @click="addToCheckout(product)">
+        <img src="https://azharjacobs.github.io/AzharImages/Capstone/cross.svg" class="img-fluid" />
+      </span>
             </a>
           </div>
           <!-- End Column -->
@@ -54,7 +54,8 @@
         searchQuery: '',
         categories: ['mens', 'womens', 'kids'],
         selectedCategory: '',
-        sortByPrice: ''
+        sortByPrice: '',
+        checkoutProducts: [] // add this line
       }
     },
     mounted() {
@@ -65,6 +66,10 @@
     console.error(`Error loading image: ${event.target.src}`);
     event.target.src = 'fallback-image-url'; // or some other fallback behavior
   },
+  addToCheckout(product) {
+    this.$store.dispatch('addToCart', product);
+
+    },
       async fetchProducts() {
         await axios.get('https://capstone-eomp-yhlw.onrender.com/products')
           .then(response => {
