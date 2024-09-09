@@ -29,7 +29,7 @@
           <!-- Start Column 1 -->
           <div v-for="(product, index) in products" :key="index" class="col-12 col-md-4 col-lg-3 mb-5">
             <a class="product-item" href="#">
-              <img :src="product.image" class="img-fluid product-thumbnail" />
+              <img :src="product.image" class="img-fluid product-thumbnail" @error="handleImageError" />
               <h3 class="product-title">{{ product.title }}</h3>
               <strong class="product-price">{{ product.price }}</strong>
               <span class="icon-cross">
@@ -44,22 +44,77 @@
   </template>
   
   <script>
+  import axios from 'axios'
+  
   export default {
     data() {
       return {
-        products: [
-          { image: 'images/product-3.png', title: 'Nordic Chair', price: '$50.00' },
-          { image: 'images/product-1.png', title: 'Nordic Chair', price: '$50.00' },
-          { image: 'images/product-2.png', title: 'Kruzo Aero Chair', price: '$78.00' },
-          { image: 'images/product-3.png', title: 'Ergonomic Chair', price: '$43.00' },
-          { image: 'images/product-3.png', title: 'Nordic Chair', price: '$50.00' },
-          { image: 'images/product-1.png', title: 'Nordic Chair', price: '$50.00' },
-          { image: 'images/product-2.png', title: 'Kruzo Aero Chair', price: '$78.00' },
-          { image: 'images/product-3.png', title: 'Ergonomic Chair', price: '$43.00' }
-        ]
-      };
+        products: [],
+        originalProducts: [], // store original products here
+        searchQuery: '',
+        categories: ['mens', 'womens', 'kids'],
+        selectedCategory: '',
+        sortByPrice: ''
+      }
+    },
+    mounted() {
+      this.fetchProducts()
+    },
+    methods: {
+      handleImageError(event) {
+    console.error(`Error loading image: ${event.target.src}`);
+    event.target.src = 'fallback-image-url'; // or some other fallback behavior
+  },
+      async fetchProducts() {
+        await axios.get('https://capstone-eomp-yhlw.onrender.com/products')
+          .then(response => {
+            const mappedProducts = response.data.map(product => ({
+              title: product.ProdName,
+              image: product.ProdUrl,
+              price: product.amount,
+              category: product.category ,
+              product_id: product.product_id// add category property
+            }))
+            this.originalProducts = mappedProducts // store original products
+            this.products = mappedProducts
+          })
+          .catch(error => {
+            console.error(error)
+          })
+      },
+      async searchProducts() {
+        const filteredProducts = this.originalProducts.filter(product => {
+          return product.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+        })
+        this.products = filteredProducts
+      },
+      async filterByCategory() {
+        if (this.selectedCategory === '') {
+          this.products = this.originalProducts // reset to original products
+        } else {
+          const filteredProducts = this.originalProducts.filter(product => {
+            return product.category === this.selectedCategory
+          })
+          this.products = filteredProducts
+        }
+      },
+      async sortProducts() {
+        if (this.sortByPrice === 'asc') {
+          this.products.sort((a, b) => a.price - b.price)
+        } else if (this.sortByPrice === 'desc') {
+          this.products.sort((a, b) => b.price - a.price)
+        }
+      }
+    },
+    watch: {
+      selectedCategory() {
+        this.filterByCategory()
+      },
+      sortByPrice() {
+        this.sortProducts()
+      }
     }
-  };
+  }
   </script>
   
   <style scoped>
