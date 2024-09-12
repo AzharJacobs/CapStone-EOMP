@@ -69,8 +69,8 @@
                       </label>
                     </div>
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <router-link to="/register" class="btn btn-primary btn-lg" @click="register">Register</router-link>
-                    </div>
+    <button class="btn btn-primary btn-lg" @click="login">Login</button>
+  </div>
                   </form>
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
@@ -95,6 +95,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import RegisterComp from '@/components/RegisterComp.vue';
 
 export default {
@@ -103,22 +104,37 @@ export default {
       username: '',
       password: '',
       rememberMe: false,
-      showRegisterModal: false // This should only exist in data
+      showRegisterModal: false, // This should only exist in data
+      name: '',
+      email: '',
+      repeatPassword: '',
+      termsAccepted: false
     }
   },
   components: { RegisterComp },
   methods: {
-    login() {
-      // Add your login logic here
-      console.log('Login button clicked');
-    },
-    openRegisterModal() { // Renamed the method to avoid duplicate key
-      this.showRegisterModal = true;
-    },
-    closeRegisterModal() {
-      this.showRegisterModal = false;
-    }
+  login(event) {
+    event.preventDefault(); // Prevents the default form submission
+    // Make API call to authenticate user
+    axios.post('https://capstone-eomp-yhlw.onrender.com/user/login', {
+     emailAdd: this.username,
+      userPass: this.password
+    })
+    .then(response => {
+      // Handle successful response
+      if (response.data.success) {
+        // Redirect to adminViewPage
+        this.$router.push({ name: '/adminViewPage' });
+      } else {
+        // Handle error response
+        console.error('Invalid credentials');
+      }
+    })
+    .catch(error => {
+      console.error('Error authenticating user:', error);
+    });
   }
+}
 }
 </script>
 
