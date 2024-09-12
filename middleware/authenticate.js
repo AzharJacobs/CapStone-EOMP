@@ -4,6 +4,14 @@ import jwt from "jsonwebtoken";
 import { config } from "dotenv";
 config()
 
+const express = require('express');
+const app = express();
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'http://localhost:8080'
+}));
+
 const checkUser = async (req, res, next) => {
     const { emailAdd, userPass } = req.body;
     console.log(emailAdd);
