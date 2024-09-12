@@ -10,7 +10,7 @@ userRouter.get('/', getUser)
 
 userRouter.get( '/:id', getUserId)
 
-userRouter.post( '/:insert', insertUser)
+userRouter.post( '/insert', insertUser)
 
 userRouter.delete('/:id', deleteUser)
 

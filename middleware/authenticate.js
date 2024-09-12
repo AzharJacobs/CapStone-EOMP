@@ -4,24 +4,19 @@ import jwt from "jsonwebtoken";
 import { config } from "dotenv";
 config()
 
-const express = require('express');
-const app = express();
-const cors = require('cors');
 
-app.use(cors({
-  origin: 'http://localhost:8080'
-}));
 
 const checkUser = async (req, res, next) => {
     const { emailAdd, userPass } = req.body;
     console.log(emailAdd);
     let hashedPassword = (await getEmailDb(emailAdd)).userPass;
+    console.log(hashedPassword);
     let result = await compare(userPass, hashedPassword);
     if (result == true) {
         let token = jwt.sign({ emailAdd: emailAdd }, process.env.SECRET_KEY, { expiresIn: '1h' });
         req.body.token = token;
-        res.redirect('/admin'); // Redirect to the admin page
-        return;
+        console.log("token",token) // Redirect to the admin page
+        next()
     } else {
         res.send('Invalid password');
     }
@@ -44,14 +39,14 @@ const verifyTheToken = (req, res, next) => {
     next();
 };
 
-// Login route
-app.post('/login', checkUser);
+// // Login route
+// app.post('/login', checkUser);
 
-// Admin page route
-app.get('/admin', verifyTheToken, (req, res) => {
-    // Display the user information and product info
-    // const products = [...]; // Define the products array or replace with actual data
-    res.render('admin', { user: req.body.user, products });
-});
+// // Admin page route
+// app.get('/admin', verifyTheToken, (req, res) => {
+//     // Display the user information and product info
+//     // const products = [...]; // Define the products array or replace with actual data
+//     res.render('admin', { user: req.body.user, products });
+// });
 
 export { checkUser, verifyTheToken }

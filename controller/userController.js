@@ -1,4 +1,4 @@
-import { getUserDb , getUserIDDb , insertUserDb , deleteUserDb , updateUserDb } from "../model/userDb.js";
+import { getUserDb , getUserIDDb ,getEmailDb, insertUserDb , deleteUserDb , updateUserDb } from "../model/userDb.js";
 import { hash } from "bcrypt";
 import jwt from "jsonwebtoken"; // Import jsonwebtoken
 
@@ -14,8 +14,13 @@ const getUserId =   async(req,res)=> {
 const insertUser = async (req,res) => {
     let {firstName,lastName,userAge,Gender,userRole,emailAdd,userPass,userProfile} = req.body
     let hashedP = await hash(userPass, 10)
+    console.log(hashedP)
     await insertUserDb(firstName,lastName,userAge,Gender,userRole,emailAdd,hashedP,userProfile)
     res.send('Data was inserted successfully')
+    // let {firstName,lastName,userAge,Gender,userRole,emailAdd,userPass,userProfile} = req.body
+    // let hashedP = await hash(userPass, 10)
+    // await insertUserDb(firstName,lastName,userAge,Gender,userRole,emailAdd,hashedP,userProfile)
+    // res.send('Data was inserted successfully')
 }
 
 const deleteUser = async (req,res) => {
@@ -41,24 +46,15 @@ const updateUser =  async(req,res)=>{
 }
 
 const loginUser = async (req, res) => {
-    const { emailAdd, userPass } = req.body;
+    const { emailAdd } = req.body;
+    const token = req.body.token
 
     // Fetch user by email
-    const user = await getUserByEmailDb(emailAdd);
+    const user = await getEmailDb(emailAdd);
 
     if (!user) {
         return res.status(401).json({ message: "Invalid email or password" });
     }
-
-    // Compare the provided password with the hashed password in the database
-    const isMatch = await compare(userPass, user.userPass);
-
-    if (!isMatch) {
-        return res.status(401).json({ message: "Invalid email or password" });
-    }
-
-    // Generate a token
-    const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: '1h' });
 
     res.json({ message: "You have signed in successfully", token });
 }
