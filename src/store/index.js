@@ -35,7 +35,7 @@ export default createStore({
     },
     async register(context, payload) {
       try {
-        let msg = (await axios.post(`${dbURL}users/`, payload)).data;
+        let msg = (await axios.post(`${dbURL}user/`, payload)).data;
         if (msg) {
           context.dispatch("fetchUsers");
           sweet({
