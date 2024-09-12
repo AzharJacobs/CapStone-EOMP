@@ -33,4 +33,10 @@ const getEmailDb = async (emailAdd) => {
     return data
 }
 
+export const getUserByEmailDb = async (email) => {
+    // Implement database query to find a user by email
+    // For example:
+    // return db.query('SELECT * FROM users WHERE emailAdd = ?', [email]);
+}
+
 export {getUserDb , getUserIDDb , insertUserDb , deleteUserDb , updateUserDb , getEmailDb} 
