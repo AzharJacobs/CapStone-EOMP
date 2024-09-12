@@ -3,34 +3,47 @@ import { getEmailDb } from "../model/userDb.js";
 import jwt from "jsonwebtoken";
 import { config } from "dotenv";
 config()
+
 const checkUser = async (req, res, next) => {
-    const {emailAdd, userPass} = req.body;
+    const { emailAdd, userPass } = req.body;
     console.log(emailAdd);
     let hashedPassword = (await getEmailDb(emailAdd)).userPass;
     let result = await compare(userPass, hashedPassword);
-    if (result==true) {
-        let token = jwt.sign({emailAdd: emailAdd}, process.env.SECRET_KEY, {expiresIn: '1h'})
-        // console.log(token);
-        req.body.token = token
-        next()
-        return
+    if (result == true) {
+        let token = jwt.sign({ emailAdd: emailAdd }, process.env.SECRET_KEY, { expiresIn: '1h' });
+        req.body.token = token;
+        res.redirect('/admin'); // Redirect to the admin page
+        return;
     } else {
-        res.send('Invalid password')
+        res.send('Invalid password');
     }
-}
+};
+
 const verifyTheToken = (req, res, next) => {
-    let {cookie} = req.headers;
+    let { cookie } = req.headers;
     // checks if the token exists first
     let token = cookie && cookie.split("=")[1];
-    jwk.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+    jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
         if (err) {
-            res.json({message: 'token has expired'});
+            res.json({ message: 'token has expired' });
             return;
         }
+        req.body = req.body || {}; // Initialize req.body as an object
         req.body.user = decoded.emailAdd
         console.log(req.body.emailAdd);
     })
     console.log(token);
     next();
-}
-export {checkUser, verifyTheToken}
+};
+
+// Login route
+app.post('/login', checkUser);
+
+// Admin page route
+app.get('/admin', verifyTheToken, (req, res) => {
+    // Display the user information and product info
+    // const products = [...]; // Define the products array or replace with actual data
+    res.render('admin', { user: req.body.user, products });
+});
+
+export { checkUser, verifyTheToken }
