@@ -1,5 +1,6 @@
 import { getUserDb , getUserIDDb , insertUserDb , deleteUserDb , updateUserDb } from "../model/userDb.js";
 import { hash } from "bcrypt";
+import jwt from "jsonwebtoken"; // Import jsonwebtoken
 
 const getUser =  async(req,res)=> {
     res.json(await getUserDb());
@@ -39,8 +40,27 @@ const updateUser =  async(req,res)=>{
     res.send('Data has been updated successfully.')
 }
 
-const loginUser = (req,res)=>{
-    res.json({message:"you have signed in successfully",token:req.body.token})
+const loginUser = async (req, res) => {
+    const { emailAdd, userPass } = req.body;
+
+    // Fetch user by email
+    const user = await getUserByEmailDb(emailAdd);
+
+    if (!user) {
+        return res.status(401).json({ message: "Invalid email or password" });
+    }
+
+    // Compare the provided password with the hashed password in the database
+    const isMatch = await compare(userPass, user.userPass);
+
+    if (!isMatch) {
+        return res.status(401).json({ message: "Invalid email or password" });
+    }
+
+    // Generate a token
+    const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: '1h' });
+
+    res.json({ message: "You have signed in successfully", token });
 }
 
 export {getUser , getUserId , insertUser, deleteUser , updateUser , loginUser }
