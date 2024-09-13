@@ -22,6 +22,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/ProductsView.vue')
   },
   {
+    path: '/product/:id',
+    name: 'SingleProduct',
+    component: () => import(/* webpackChunkName: "about" */ '../views/SingleProductView.vue'),
+    props: true
+  },
+  {
     path: '/contact',
     name: '/contact',
     component: () => import(/* webpackChunkName: "about" */ '../views/ContactView.vue')
@@ -38,10 +44,15 @@ const routes = [
     
   },
   {
+    path: '/admin',
+    name: 'admin',
+    component: () => import(/* webpackChunkName: "about" */ '../views/AdminView.vue')
+  },
+  {
     path: '/register',
     name: 'Register',
     component: RegisterComp
-  }
+  },
 ]
 
 const router = createRouter({

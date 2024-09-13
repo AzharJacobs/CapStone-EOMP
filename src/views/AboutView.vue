@@ -8,7 +8,7 @@
               <h1>About Us
 				
 				<span class="d-block"></span></h1>
-              <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
+              <p class="mb-4">At [Your Company Name], we are dedicated to providing high-quality products that meet the diverse needs of our customers. Our journey began with a vision to deliver excellence in every aspect of our business. With a focus on customer satisfaction, we continually strive to improve and innovate</p>
 		<p>
                 <a href="#" class="btn btn-secondary me-2">Shop Now</a>
                 <a href="#" class="btn btn-white-outline">Explore</a>
@@ -113,9 +113,9 @@
       <!-- Start Column 2 -->
       <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
         <img src="images/person_2.jpg" class="img-fluid mb-5">
-        <h3><a href="#"><span>Jeremy</span> Walker</a></h3>
+        <h3><a href="#"><span>Mohammah</span> Mohammed</a></h3>
         <span class="d-block position mb-4">Chief Operations Officer</span>
-        <p>Jeremy ensures everything runs smoothly behind the scenes, from supply chain management to customer service, always aiming for operational excellence.</p>
+        <p>Mohammed ensures everything runs smoothly behind the scenes, from supply chain management to customer service, always aiming for operational excellence.</p>
         <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
       </div> 
       <!-- End Column 2 -->
@@ -123,9 +123,9 @@
       <!-- Start Column 3 -->
       <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
         <img src="images/person_3.jpg" class="img-fluid mb-5">
-        <h3><a href="#"><span>Patrik</span> White</a></h3>
+        <h3><a href="#"><span>Nasheetah</span>Jacobs</a></h3>
         <span class="d-block position mb-4">Head of Design</span>
-        <p>With a keen eye for detail and a love for contemporary design, Patrik brings your ideas to life, blending aesthetics and functionality into every piece of furniture.</p>
+        <p>With a keen eye for detail and a love for contemporary design, Nasheetah brings your ideas to life, blending aesthetics and functionality into every piece of furniture.</p>
         <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
       </div> 
       <!-- End Column 3 -->
@@ -133,9 +133,9 @@
       <!-- Start Column 4 -->
       <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-0">
         <img src="images/person_4.jpg" class="img-fluid mb-5">
-        <h3><a href="#"><span>Kathryn</span> Ryan</a></h3>
+        <h3><a href="#"><span>Zakarieyah</span>Salie</a></h3>
         <span class="d-block position mb-4">Customer Experience Manager</span>
-        <p>Kathryn is dedicated to ensuring each customer has an exceptional experience, from the first inquiry to after-sales support, making sure you love your new space.</p>
+        <p>Zakariyah is dedicated to ensuring each customer has an exceptional experience, from the first inquiry to after-sales support, making sure you love your new space.</p>
         <p class="mb-0"><a href="#" class="more dark">Learn More <span class="icon-arrow_forward"></span></a></p>
       </div> 
       <!-- End Column 4 -->

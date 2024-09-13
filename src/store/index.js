@@ -96,7 +96,7 @@ export default createStore({
     },
     async fetchUsers(context) {
       try {
-        let results = (await axios.get(`${dbURL}users`)).data;
+        let results = (await axios.get(`${dbURL}/user/`)).data;
         if (results) {
           context.commit("setUsers", results);
           // console.log(results)
@@ -112,7 +112,7 @@ export default createStore({
     },
     async fetchUser(context, payload) {
       try {
-        let result = (await axios.get(`${dbURL}users/${payload.id}`)).data;
+        let result = (await axios.get(`${dbURL}user/${payload.id}`)).data;
         if (result) {
           context.commit("setUser", result);
         } else {
@@ -134,7 +134,7 @@ export default createStore({
     },
     async updateUser(context, payload) {
       try {
-        let msg = await axios.patch(`${dbURL}users/${payload.userID}`, payload);
+        let msg = await axios.patch(`${dbURL}user/${payload.userID}`, payload);
         if (msg) {
           context.dispatch("fetchUsers");
           sweet({
@@ -156,7 +156,7 @@ export default createStore({
     },
     async deleteUser(context, payload) {
       try {
-        let msg = await axios.delete(`${dbURL}users/${payload}`);
+        let msg = await axios.delete(`${dbURL}user/${payload}`);
         if (msg) {
           context.dispatch("fetchUsers");
           sweet({
@@ -178,7 +178,8 @@ export default createStore({
     },
     async fetchProducts(context) {
       try {
-        let {data}  = await axios.get(`${dbURL}products`);
+        let {data}  = await axios.get(`${dbURL}/products/`);
+        console.log('Response:', response);
         console.log (data)
         if (data) {
           context.commit("setProducts", data);

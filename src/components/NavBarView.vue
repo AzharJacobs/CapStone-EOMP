@@ -24,6 +24,7 @@
           <li><router-link class="nav-link" to="/about">About us</router-link></li>
           <li><router-link class="nav-link" to="/checkout">CheckOut</router-link></li>
           <li><router-link class="nav-link" to="/contact">Contact us</router-link></li>
+          <li><router-link class="nav-link" to="/admin">Admin</router-link></li>
         </ul>
         
         <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">

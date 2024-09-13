@@ -125,9 +125,9 @@ export default {
         if (response.data.success) {
           // Redirect to adminViewPage
           this.$router.push({ name: 'admin' });
-        } else {
-          // Handle error response
-          console.error('Invalid credentials');
+        }else {
+    // Handle invalid credentials or other issues
+    console.error('Invalid credentials or unexpected server response');
         }
       })
       .catch(error => {
