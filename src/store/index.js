@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 import axios from "axios";
 import sweet from "sweetalert";
+import Cookies from 'js-cookie';
 const dbURL ="https://capstone-eomp-yhlw.onrender.com"
 
 export default createStore({
@@ -51,6 +52,43 @@ export default createStore({
         sweet({
           title: "Error",
           text: "Please try again at a different time",
+          icon: "error",
+          timer: 4000,
+        });
+      }
+    },
+    async login(context, payload) {
+      console.log("Login action triggered");
+      try {
+        let { data } = await axios.post(`${dbURL}user/login`, payload);
+        let { msg, result, token } = data;
+    
+        if (result) {
+          sweet({
+            title: "Login",
+            text: `${msg}`,
+            icon: "success",
+            timer: 4000,
+          });
+    
+          context.commit("setUser", result);
+          // Set the token as a cookie
+          Cookies.set('LegitUser', { token, result });
+          // Apply the token to your API requests
+          axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+          location.reload();
+        } else {
+          sweet({
+            title: "Error",
+            text: `${msg}`,
+            icon: "error",
+            timer: 4000,
+          });
+        }
+      } catch (e) {
+        sweet({
+          title: "Error",
+          text: `An error occurred while logging in.`,
           icon: "error",
           timer: 4000,
         });

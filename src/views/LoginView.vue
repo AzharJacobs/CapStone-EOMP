@@ -112,16 +112,19 @@ export default {
   methods: {
   login(event) {
     event.preventDefault();
+    // Log credentials for debugging
+    console.log('Email:', this.emailAdd, 'Password:', this.userPass);
     try {
       axios.post('https://capstone-eomp-yhlw.onrender.com/user/login', {
         emailAdd: this.emailAdd,
         userPass: this.userPass
       })
       .then(response => {
+        console.log(response.data); 
         // Handle successful response
         if (response.data.success) {
           // Redirect to adminViewPage
-          this.$router.push({ name: '/AdminView.vue' });
+          this.$router.push({ name: 'admin' });
         } else {
           // Handle error response
           console.error('Invalid credentials');
