@@ -104,8 +104,8 @@
     <!-- User List -->
     <div class="user-list">
       <h3>All Users</h3>
-      <div v-if="users && users.length">
-        <div v-for="user in users" :key="user.userID" class="user-card">
+  <div v-if="users && users.length">
+    <div v-for="user in users" :key="user.userID" class="user-card">
           <div class="user-info">
             <h4>{{ user.firstName }} {{ user.lastName }}</h4>
             <p><strong>Email:</strong> {{ user.emailAdd }}</p>
@@ -232,33 +232,6 @@
         isEditingUser.value = false;
         editingUserId.value = null;
       };
-      onMounted(async () => {
-  try {
-    const productsResponse = await store.dispatch('fetchProducts');
-    const usersResponse = await store.dispatch('fetchUsers');
-    
-    // Check if responses have data property
-    if (productsResponse && productsResponse.data) {
-      products.value = productsResponse.data;
-    } else {
-      console.error('Products response does not have a data property:', productsResponse);
-      products.value = []; // Fallback to empty array if data is undefined
-    }
-
-    if (usersResponse && usersResponse.data) {
-      users.value = usersResponse.data;
-    } else {
-      console.error('Users response does not have a data property:', usersResponse);
-      users.value = []; // Fallback to empty array if data is undefined
-    }
-
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    products.value = []; // Fallback to empty array on error
-    users.value = []; // Fallback to empty array on error
-  }
-});
-
       return {
         productForm,
         products,
